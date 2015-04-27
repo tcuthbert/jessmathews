@@ -1,0 +1,33 @@
+/* Scaffolding */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #34250F;
+  padding-top: 70px;
+}
+
+/* Header */
+
+.banner {
+  background-color: black;
+}
+
+.banner-img {
+  margin: 0 auto;
+  display: block;
+}
+
+.nav-buttons {
+  background-color: grey;
+}
+
+.dropdown-span {
+  width: 75%;
+}
+
+.masthead a {
+  color: black;
+}

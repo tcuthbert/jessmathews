@@ -1,6 +1,10 @@
+# Db
+db.*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+.python-version
 
 # C extensions
 *.so
