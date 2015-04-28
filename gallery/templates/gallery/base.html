@@ -15,16 +15,16 @@
   </head>
   <body>
     <!-- Navigation -->
-    <div class="masthead">
-      <nav class="navbar navbar-default navbar-fixed-top banner" role="navigation">
+    <header class="masthead">
+      <nav class="navbar navbar-default banner" role="navigation">
         <div>
           <a href="#"><img class="banner-img" src="http://www.metal-archives.com/images/7/3/4/2/73422_logo.jpg"></img></a>
         </div>
-        <div class="navbar-header nav-center">
-        </div>
+        <!--<div class="navbar-header nav-center">-->
+        <!--</div>-->
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav nav-justified nav-buttons nav-tabs">
+        <div class="collapse navbar-collapse nav-span">
+          <ul class="nav nav-justified nav-grey nav-tabs">
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
             <li class="dropdown">
@@ -37,12 +37,13 @@
           </ul>
         </div>
       </nav>
-    </div>
-    <!-- Sidebar -->
+    </header>
+    <main role="main">
     <!-- Content -->
-    <div class="container">
       {% block content %}{% endblock %}
-    </div>
+    <!-- Footer -->
+    <footer></footer>
+    </main>
     <!-- Javascript -->
     <script src={% static "js/jquery-2.1.3.min.js" %}></script>
     <script src={% static "js/bootstrap.min.js" %}></script>

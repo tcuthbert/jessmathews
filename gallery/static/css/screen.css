@@ -5,14 +5,19 @@
 }
 
 body {
-  background-color: #34250F;
+  background-color: #1D0E00;
   padding-top: 70px;
 }
 
 /* Header */
 
+.masthead a {
+  color: black;
+}
+
 .banner {
   background-color: black;
+  border-style: none;
 }
 
 .banner-img {
@@ -20,14 +25,14 @@ body {
   display: block;
 }
 
-.nav-buttons {
+.nav-grey {
   background-color: grey;
+}
+
+.nav-span {
+  padding: 0;
 }
 
 .dropdown-span {
   width: 75%;
-}
-
-.masthead a {
-  color: black;
 }
