@@ -1,3 +1,6 @@
+# OSX rubbish
+.DS_Store
+
 # Db
 db.*
 
