@@ -1,4 +1,4 @@
-/* Imports */
+ */
 @import url(http://fonts.googleapis.com/css?family=Vollkorn:400,700);
 
 /* Scaffolding */
@@ -8,23 +8,23 @@
 }
 
 body {
-  background-color: #1D0E00;
-  padding-top: 70px;
+  background-color: #ECF0F1;
+  padding-top: 40px;
   font-family: 'Vollkorn', serif;
   font-weight: bolder;
-  color: #2ECC40;
+  color: #2C3E50;
 }
 
 /* Header */
 
-.masthead a {
-  color: #2ECC40;
-  font-weight: bolder;
-}
-
-.banner {
+header {
   background-color: black;
   border-style: none;
+}
+
+nav a {
+  color: #2C3E50;
+  font-weight: bolder;
 }
 
 .banner-img {
@@ -32,19 +32,21 @@ body {
   display: block;
 }
 
-.nav-grey {
-  background-color: grey;
-}
-
-.nav-span {
-  padding: 0;
-}
-
 .dropdown-span {
   width: 75%;
 }
 
- /*Footer */
+/* Slider */
+
+#slider1_container {
+  margin-top: 8%;
+  margin-bottom: 8%;
+  /*-webkit-box-shadow: 0px 0px 33px 4px rgba(108,108,108,1);*/
+  /*-moz-box-shadow: 0px 0px 33px 4px rgba(108,108,108,1);*/
+  /*box-shadow: 0px 0px 33px 4px rgba(108,108,108,1);*/
+}
+
+/*Footer */
 
 footer {
   padding: 1% 0 1% 0;
