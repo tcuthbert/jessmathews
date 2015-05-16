@@ -1,0 +1,4 @@
+ipdb==0.8
+ipython==3.1.0
+jedi==0.8.1
+flake8
