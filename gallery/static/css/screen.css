@@ -41,12 +41,19 @@ nav a {
   display: block;
 }
 
+/* Content */
+
 .dropdown-span {
   width: 75%;
 }
 
 .span-gallery {
   display: inline;
+}
+
+.nav-anchor {
+  color: #333;
+  text-decoration: none !important;
 }
 
 /* Slider */
