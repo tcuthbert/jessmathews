@@ -9,6 +9,8 @@ urlpatterns = [
     # url(r'^$', 'jessmathews.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    url(r'^weblog/', include('zinnia.urls', namespace='zinnia')),
+    url(r'^comments/', include('django_comments.urls')),
     url(r'^photologue/', include('photologue.urls', namespace='photologue')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^contact/', TemplateView.as_view(
