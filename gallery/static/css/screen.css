@@ -27,6 +27,15 @@ nav a {
   font-weight: lighter;
 }
 
+@media (min-width: 768px){
+  .page-nav .navbar-nav{
+    float: none;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+  }
+}
+
 .banner-img {
   margin: 0 auto;
   display: block;
@@ -34,6 +43,10 @@ nav a {
 
 .dropdown-span {
   width: 75%;
+}
+
+.span-gallery {
+  display: inline;
 }
 
 /* Slider */
@@ -45,6 +58,8 @@ nav a {
   /*-moz-box-shadow: 0px 0px 33px 4px rgba(108,108,108,1);*/
   /*box-shadow: 0px 0px 33px 4px rgba(108,108,108,1);*/
 }
+
+/* Contact Page */
 
 /*Footer */
 

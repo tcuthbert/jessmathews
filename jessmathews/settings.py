@@ -110,4 +110,8 @@ STATICFILES_DIRS = (
 
 STATIC_URL = '/static/'
 
+MEDIA_ROOT = '/Users/tom/Code/python/jessmathews/media'
+
+MEDIA_URL = '/media/'
+
 SITE_ID = 1
