@@ -37,8 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'gallery',
     'photologue',
+    'sortedm2m',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,4 +107,11 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     '/var/www/static/',
 )
+
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = '/Users/tom/Code/python/jessmathews/media'
+
+MEDIA_URL = '/media/'
+
+SITE_ID = 1
