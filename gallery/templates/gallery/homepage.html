@@ -1,10 +1,20 @@
 {% extends "base.html" %}
+{% load i18n zinnia %}
 
 {% block title  %}Jess Mathews Photography{% endblock %}
 
 {% block content %}
-<section class="row-fluid">
-  <div class="blog">
+<section class="row">
+  <div class="col-lg-1 blog-feed">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-8">
+    {% for object in object_list %}
+    {% include "gallery/_article_entry.html" %}
+    <!--<article id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}" itemscope itemtype="http://schema.org/Article">-->
+    <!--</article>-->
+    {% endfor %}
+    </div>
   </div>
 </section>
 {% endblock %}
