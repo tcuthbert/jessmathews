@@ -106,9 +106,16 @@ nav a {
 }
 
 .blog-feed {
-  float: none;
-  margin: 0 auto;
   padding: 40px;
+}
+
+.hentry {
+  display: table;
+  margin: auto;
+}
+
+.entry-footer {
+  text-align: left;
 }
 
 /* Contact Page */

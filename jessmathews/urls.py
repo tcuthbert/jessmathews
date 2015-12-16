@@ -1,24 +1,63 @@
-from django.conf.urls import include, url
-from django.contrib import admin
-from django.views.generic import TemplateView 
+"""Urls for the zinnia-theme-bootstrap demo"""
 from django.conf import settings
+from django.contrib import admin
+from django.conf.urls import url
+from django.conf.urls import include
+from django.conf.urls import patterns
 from django.conf.urls.static import static
-from gallery.views import HomePage
+from django.views.generic import TemplateView
+from django.views.generic.base import RedirectView
 
-urlpatterns = [
-    # Examples:
-    # url(r'^$', 'jessmathews.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
 
-    url(r'^weblog/', include('zinnia.urls', namespace='zinnia')),
+from zinnia.sitemaps import TagSitemap
+from zinnia.sitemaps import EntrySitemap
+from zinnia.sitemaps import CategorySitemap
+from zinnia.sitemaps import AuthorSitemap
+
+admin.autodiscover()
+
+urlpatterns = patterns(
+    '',
+    url(r'^$', RedirectView.as_view(url='/visual/', permanent=True)),
+    url(r'^visual/', include('zinnia.urls', namespace='zinnia')),
     url(r'^comments/', include('django_comments.urls')),
-    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
+    url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^contact/', TemplateView.as_view(
-        template_name="gallery/contact.html"
-    )),
-    url(r'^$', HomePage.as_view()),
-    #url(r'^$', TemplateView.as_view(
-        #template_name="gallery/homepage.html"
-    #)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)
+
+sitemaps = {
+    'tags': TagSitemap,
+    'visual': EntrySitemap,
+    'authors': AuthorSitemap,
+    'categories': CategorySitemap
+}
+
+urlpatterns += patterns(
+    'django.contrib.sitemaps.views',
+    url(r'^sitemap.xml$', 'index',
+        {'sitemaps': sitemaps}),
+    url(r'^sitemap-(?P<section>.+)\.xml$', 'sitemap',
+        {'sitemaps': sitemaps}),
+)
+
+urlpatterns += patterns(
+    '',
+    url(r'^400/$', 'django.views.defaults.bad_request'),
+    url(r'^403/$', 'django.views.defaults.permission_denied'),
+    url(r'^404/$', 'django.views.defaults.page_not_found'),
+    url(r'^500/$', 'django.views.defaults.server_error'),
+)
+
+urlpatterns += patterns('',
+                       url(r'^admin/', include(admin.site.urls)),
+                       url(r'^photologue/', include('photologue.urls', namespace='photologue')),
+                       url(r'^$', TemplateView.as_view(
+                           template_name="homepage.html"), name='homepage'),
+                       ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += patterns(
+        '',
+        url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT})
+    )

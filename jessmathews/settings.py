@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django_comments',
     'mptt',
     'tagging',
+    'zinnia_bootstrap',
     'zinnia',
     'gallery',
     'photologue',
@@ -63,9 +64,17 @@ ROOT_URLCONF = 'jessmathews.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
+        'DIRS': [
+            os.path.join(BASE_DIR, 'zinnia'),
+            os.path.join(BASE_DIR, 'templates')
+        ],
+        'APP_DIRS': False,
         'OPTIONS': {
+            'loaders': [
+                'app_namespace.Loader',
+                'django.template.loaders.filesystem.Loader',
+                'django.template.loaders.app_directories.Loader',
+            ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -110,7 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
+    # os.path.join(BASE_DIR, "static"), <= Possibly look at moving back to this dir?j
+    os.path.join(BASE_DIR, "zinnia_bootstrap/static"),
     '/var/www/static/',
 )
 
