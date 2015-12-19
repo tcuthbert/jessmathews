@@ -1,0 +1,20 @@
+.masthead {
+  margin: 0 0 20px 0;
+}
+
+.breadcrumb-clear {
+  background: none;
+}
+
+.blog-nav {
+  padding-bottom: 20px;
+}
+
+@media (min-width: 768px){
+.blog-nav .navbar-nav{
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    float: none;
+}
+}  
