@@ -2,16 +2,18 @@
 
 {# Display a randomnly-selected set of photos from a given gallery #}
 
-<div>
+<div class="center-block">
     
-    <h2><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
-    <p class="muted"><small>{% trans "Published" %} {{ gallery.date_added }}</small></p>
+    <h2 class="text-center" ><a href="{{ gallery.get_absolute_url }}">{{ gallery.title }}</a></h2>
+    <p class="muted text-center"><small>{% trans "Published" %} {{ gallery.date_added }}</small></p>
     {% if gallery.description %}<p>{{ gallery.description|safe }}</p>{% endif %}
     
+    <div class="row-fluid text-center">
     {% for photo in gallery.sample %}
         <a href="{{ photo.get_absolute_url }}">
-             <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
+             <img style="display: inline-block; margin: 15px;" src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}" >
         </a>
 	{% endfor %}
+    </div>
 
 </div>

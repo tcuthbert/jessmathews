@@ -2,7 +2,11 @@
   {% for crumb in breadcrumbs %}
   <li {% if forloop.last %}class="active"{% endif%}>
     {% if crumb.url %}
+    {% if crumb.name == 'Art' %}
+    <a href="/photologue" title="{{ crumb.name }}">{{ crumb.name }}</a>
+    {% else %}
     <a href="{{ crumb.url }}" title="{{ crumb.name }}">{{ crumb.name }}</a>
+    {% endif %}
     {% else %}
     {{ crumb.name }}
     {% endif %}

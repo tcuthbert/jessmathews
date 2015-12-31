@@ -15,7 +15,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -130,3 +129,5 @@ MEDIA_ROOT = '/Users/tom/Code/python/jessmathews/media'
 MEDIA_URL = '/media/'
 
 SITE_ID = 1
+
+PHOTOLOGUE_GALLERY_SAMPLE_SIZE  = 4
