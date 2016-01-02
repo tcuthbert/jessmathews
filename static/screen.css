@@ -11,10 +11,10 @@
 }
 
 @media (min-width: 768px){
-.blog-nav .navbar-nav{
-    margin: 0 auto;
-    display: table;
-    table-layout: fixed;
-    float: none;
+	.blog-nav .navbar-nav{
+		margin: 0 auto;
+		display: table;
+		table-layout: fixed;
+		float: none;
+	}
 }
-}  

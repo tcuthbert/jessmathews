@@ -118,6 +118,7 @@ USE_TZ = True
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), #<= Possibly look at moving back to this dir?j
+    os.path.join(BASE_DIR, "vendor"), #<= Possibly look at moving back to this dir?j
     # os.path.join(BASE_DIR, "zinnia_bootstrap/static"),
     '/var/www/static/',
 )
