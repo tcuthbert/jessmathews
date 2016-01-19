@@ -1,10 +1,52 @@
-.masthead {
-  margin: 0 0 20px 0;
-	background-image: url(http://www.metal-archives.com/images/7/3/4/2/73422_logo.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: black;
-	min-height: 400px;
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+
+html body, a, small {
+		color: #433C3C !important;
+		font-family: 'Exo', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+		text-decoration: none !important;
+}
+
+.entry-header-offset {
+
+}
+
+small.entry-info {
+    font-size: x-small;
+}
+
+div.entry-content.lead p {
+		font-size: .6em;
+}
+
+a.entry-header-offset {
+	font-size: .9em
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+	.masthead {
+		margin: 0 0 20px 0;
+		background-image: url(http://www.metal-archives.com/images/7/3/4/2/73422_logo.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: black;
+		min-height: 400px;
+	}
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.masthead {
+			margin: 0 0 20px 0;
+	}
+
+	.masthead::after {
+		content: "Jess Mathews Photography";
+		display: block;
+		margin-top: 20px;
+	}
 }
 
 .breadcrumb-clear {
@@ -15,21 +57,24 @@
   padding-bottom: 20px;
 }
 
-@media (min-width: 768px){
-	.blog-nav .navbar-nav{
+.blog-nav .navbar-nav{
 		margin: 0 auto;
 		display: table;
 		table-layout: fixed;
 		float: none;
 	}
-}
 
 a:focus.gallery-thumb, a:hover.gallery-thumb {
     color: #23527c;
     text-decoration: none;
 } 
 
+article.hentry {
+	    margin-bottom: -10em;
+}
+
 footer {
 	margin-top: 50px;
 	margin-bottom: 200px;
 }
+
