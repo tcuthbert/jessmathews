@@ -28,10 +28,11 @@ a.entry-header-offset {
 @media only screen  and (min-width : 1224px) {
 	.masthead {
 		margin: 0 0 20px 0;
-		background-image: url(http://www.metal-archives.com/images/7/3/4/2/73422_logo.jpg);
+		/*background-image: url(http://www.metal-archives.com/images/7/3/4/2/73422_logo.jpg);*/
+		background-image: url(/static/img/gbacfgab.jpg);
 		background-repeat: no-repeat;
 		background-position: center;
-		background-color: black;
+		background-color: white;
 		min-height: 400px;
 	}
 }

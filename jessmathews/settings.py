@@ -93,9 +93,16 @@ WSGI_APPLICATION = 'jessmathews.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
+    # 'default': {
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
 }
 
 
@@ -120,8 +127,10 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"), #<= Possibly look at moving back to this dir?j
     os.path.join(BASE_DIR, "vendor"), #<= Possibly look at moving back to this dir?j
     # os.path.join(BASE_DIR, "zinnia_bootstrap/static"),
-    '/var/www/static/',
+    # '/var/www/static/',
 )
+
+STATIC_ROOT = '/static'
 
 STATIC_URL = '/static/'
 

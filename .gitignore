@@ -6,11 +6,13 @@ media/*
 
 # Db
 db.*
+db.sqlite3
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 .python-version
+*.pyc
 
 # C extensions
 *.so
@@ -59,6 +61,7 @@ coverage.xml
 
 # Django stuff:
 *.log
+media/*
 
 # Sphinx documentation
 docs/_build/
