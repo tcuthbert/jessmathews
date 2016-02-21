@@ -70,6 +70,9 @@ docs/_build/
 target/
 
 # Images
-*.jpg
-*.jpeg
-*.png
+static
+vendor
+media
+#*.jpg
+#*.jpeg
+#*.png
