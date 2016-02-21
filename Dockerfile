@@ -11,6 +11,8 @@ MAINTAINER Thomas Cuthbert
 
 # Set env variables used in this Dockerfile (add a unique prefix, such as DOCKYARD)
 # Local directory with project source
+ENV DOCKYARD_SRC=./app
+
 ENV VIRTUALHOST=jessmathews.com
 # Directory in container for all project files
 ENV DOCKYARD_SRVHOME=/srv
