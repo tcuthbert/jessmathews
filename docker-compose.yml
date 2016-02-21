@@ -1,0 +1,29 @@
+lb:
+  image: jwilder/nginx-proxy
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - web
+  volumes:
+    - ./app/static:/static
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+    - ./default_location:/etc/nginx/vhost.d/default_location:ro
+web:
+  environment:
+    - VIRTUAL_HOST=jessmathews.com
+  build: .
+  command: gunicorn -w 3 -b :8000 jessmathews.wsgi
+  volumes:
+    - ./app:/code
+    - ./app/static:/static
+  expose:
+    - "8000"
+  links:
+    - db
+db:
+  image: postgres
+  environment:
+    PGDATA: /var/lib/postgresql/data/pgdata
+  #volumes:
+    #- ./data:/var/lib/postgresql/data/pgdata
