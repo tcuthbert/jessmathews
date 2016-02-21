@@ -13,6 +13,7 @@ web:
   image: tcuthbert/jessmathews_automated
   environment:
     - VIRTUAL_HOST=jessmathews.com
+  volumes:
     - /srv/app/static:/static
   expose:
     - "8000"
