@@ -21,7 +21,7 @@ ENV DOCKYARD_SRVPROJ=/srv/app
 
 # Update the default application repository sources list
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y python python-pip
+RUN apt-get install -y python3 python3-dev python3-pip libpq-dev libjpeg8-dev
 
 # Create application subdirectories
 WORKDIR $DOCKYARD_SRVHOME
@@ -32,7 +32,7 @@ VOLUME ["$DOCKYARD_SRVHOME/media/", "$DOCKYARD_SRVHOME/logs/"]
 COPY $DOCKYARD_SRC $DOCKYARD_SRVPROJ
 
 # Install Python dependencies
-RUN pip install -r $DOCKYARD_SRVPROJ/requirements.txt
+RUN pip3 install -r $DOCKYARD_SRVPROJ/requirements.txt
 
 # Port to expose
 EXPOSE 8000
