@@ -6,9 +6,9 @@ lb:
   links:
     - web
   volumes:
+    - /var/run/default_location:/etc/nginx/vhost.d/default_location:ro
     - ./app/static:/static
     - /var/run/docker.sock:/tmp/docker.sock:ro
-    - ./vhost.d:/etc/nginx/vhost.d:ro
 web:
   image: tcuthbert/jessmathews_automated
   environment:
