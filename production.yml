@@ -1,0 +1,22 @@
+lb:
+  image: jwilder/nginx-proxy
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - web
+  volumes:
+    - ./app/static:/static
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+    - ./default_location:/etc/nginx/vhost.d/default_location:ro
+web:
+  image: tcuthbert/jessmathews_automated
+  environment:
+    - VIRTUAL_HOST=jessmathews.com
+    - /srv/app/static:/static
+  expose:
+    - "8000"
+  links:
+    - db
+db:
+  image: postgres
