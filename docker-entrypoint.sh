@@ -8,7 +8,6 @@ touch /srv/logs/access.log
 tail -n 0 -f /srv/logs/*.log &
 
 # Start Gunicorn processes
-cd /srv/app
 echo Starting Gunicorn.
 exec gunicorn jessmathews.wsgi \
     --name jessmathews_web \
