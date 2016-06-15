@@ -37,6 +37,20 @@ a.entry-header-offset {
 	}
 }
 
+/* Tablets  ----------- */
+@media only screen and (min-width : 767px) and (max-width : 1023px) {
+	.masthead {
+		margin: 0 0 20px 0;
+		/*background-image: url(http://www.metal-archives.com/images/7/3/4/2/73422_logo.jpg);*/
+		background-image: url(/static/img/gbacfgab.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-color: white;
+		background-size: auto 256px;
+		min-height: 300px;
+	}
+}
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	.masthead {
